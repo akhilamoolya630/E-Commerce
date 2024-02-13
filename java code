@@ -1,0 +1,33 @@
+package E_commerce_Application;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class User_Profile {
+
+    public static void main(String[] args) throws IOException {
+        FileWriter fw1 = new FileWriter("D://out1.txt");
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Enter details for user " + i + " or type 'exit' to stop:");
+            System.out.print("Name: ");
+            String name = scanner.nextLine();
+            if (name.equalsIgnoreCase("exit")) {
+                break;
+            }
+            System.out.print("Language: ");
+            String lang = scanner.nextLine();
+            System.out.print("Email: ");
+            String Email = scanner.nextLine();
+            System.out.print("phone number: ");
+            String phonenumber = scanner.nextLine();
+            System.out.print("address: ");
+            String Address = scanner.nextLine();
+            String details = name + "," + lang + "," + Email+ "," + phonenumber+ "," +Address;
+            fw1.write(details + "\n");
+        }
+        fw1.close();
+        scanner.close();
+    }
+}
